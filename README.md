@@ -1,4 +1,4 @@
-# RAG sistem za pretragu naučnih radova
+# RAG sistem za pretragu naučnih radova sa fine-tuningom embedding modela
 
 RAG (Retrieval-Augmented Generation) sistem koji za zadatu naučnu tvrdnju pronalazi relevantne delove radova iz BEIR SciFact korpusa i generiše odgovor zasnovan na sadržaju dokumenata, umesto na opštem znanju jezičkog modela. Podela skupova rađena je na nivou upita (ne parova) kako bi se sprečilo curenje informacija između trening i validacionog skupa. Dokumenti se metodom rolling window seku na preklapajuće prozore, pa se embeduju modelom all-MiniLM-L6-v2 (fine-tunovan pomoću Optuna HPO) i indeksiraju u FAISS bazu za brzu pretragu po kosinusnoj sličnosti. Generator je FLAN-T5. Kvalitet pretrage se meri metrikama NDCG, MRR i Recall na test skupu.
 
